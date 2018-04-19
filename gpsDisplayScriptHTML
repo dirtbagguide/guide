@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        //creates map cantered at seattle
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: {
+            lat: 47.6062,
+            lng: -122.3321
+          },
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        });
+        var ctaLayer = new google.maps.KmlLayer({
+        	url: 'https://raw.githubusercontent.com/dirtbagguide/guide/master/mountstuart.kml',
+          map: map
+        })
+      }
+      
+      
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMheOaKnxji5sggQevY-kAiaiNaIPLkOw&callback=initMap">
+
+
+    </script>
+  </body>
+
+</html>
